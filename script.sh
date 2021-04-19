@@ -14,7 +14,7 @@ sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
 
 CERTBOT=$(ls /usr/bin | grep certbot)
-if [ -z "$CERTBOT"]
+if [ -z "$CERTBOT"];
 then 
        echo "On cree le lien /usr/bin/cerbot"
        ln -s /snap/bin/cerbot /usr/bin/cerbot
