@@ -36,7 +36,7 @@ echo "pull sources git"
 # je choisit mon pâth
 cd /var/www/html
 
-GIT_CMD=$(ls -lsa /var/www/html | grep .git)
+GIT_CMD=$(ls -lsa /var/www/html/ | grep .git)
 if [ -z ["GIT_CMD"] ];
  then
       echo " ok"
