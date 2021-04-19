@@ -14,7 +14,7 @@ sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
 
 CERTBOT=$(ls /usr/bin | grep certbot)
-if [-z "$CERTBOT"]
+if [ -z "$CERTBOT"]
 then 
        echo "On cree le lien /usr/bin/cerbot"
        ln -s /snap/bin/cerbot /usr/bin/cerbot
@@ -40,7 +40,7 @@ GIT_CMD=$(ls -lsa /var/www/html | grep .git)
 if [ -z ["GIT_CMD"] ];
  then
      git init
-     git remote add origin main https://github.com/benoit17630/monBlog.git
+     git remote add origin https://github.com/benoit17630/monBlog.git
 fi
 
 #je pull  mon dossier 
