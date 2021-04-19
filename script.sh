@@ -37,7 +37,7 @@ echo "pull sources git"
 cd /var/www/html
 
 GIT_CMD=$(ls -lsa /var/www/html/ | grep .git)
-if [ -z ["GIT_CMD"] ];
+if [ -z ["$GIT_CMD"] ];
  then
       echo " ok"
      git init
