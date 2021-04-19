@@ -7,6 +7,8 @@ apt install -y mariadb-server mariadb-client
 apt install -y composer
 apt install vim git snapd
 
+service apache2 start
+service mysql start
 echo "instal snap"
 sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
@@ -26,6 +28,7 @@ then
             echo "ont ecrase la conf apache"
             cp 000-default.conf /etc/apache2/sites-available/000-default.conf
             service apache2 restart
+
 fi
 
 
@@ -47,7 +50,7 @@ chown -R www-data:www-data /var/www/html/
 source .env
 
 ENV_DEST=$(md5sum /var/www/html/.env | awk '{print $1}')
-ENV_SRC=$(md5sum .env | awk '{print $1}')
+ENV_SRC=$(md5sum /opt/config_serveur/.env | awk '{print $1}')
 
 if [ "ENV_DEST" != "ENV_SRC" ];
  then
