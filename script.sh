@@ -7,8 +7,8 @@ apt install -y mariadb-server mariadb-client
 apt install -y composer
 apt install vim git snapd
 
-service apache2 start
-service mysql start
+service apache2 restart
+service mysql restart
 echo "instal snap"
 sudo snap install core; sudo snap refresh core
 sudo snap install --classic certbot
@@ -56,7 +56,7 @@ ENV_SRC=$(md5sum /opt/config_serveur/.env | awk '{print $1}')
 if [ "ENV_DEST" != "ENV_SRC" ];
  then
      echo 'ont ecrase le .env'
-     cp .env /var/www/html/.env
+     cp /opt/config_serveur/.env /var/www/html/.env
 
 fi
 
