@@ -46,5 +46,15 @@ git pull origin main
 chown -R www-data:www-data /var/www/html/ 
 source .env
 
+ENV_DEST=$(md5sum /var/www/html/.env | awk '{print $1}')
+ENV_SRC=$(md5sum .env | awk '{print $1}')
+
+if [ "ENV_DEST" != "ENV_SRC"];
+ then
+     echo 'ont ecrase le .env'
+     cp .env /var/www/html/.env
+
+fi
+
 echo " penser a taper la commande certbit --apache"
 
