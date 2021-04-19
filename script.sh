@@ -36,7 +36,7 @@ echo "pull sources git"
 # je choisit mon pâth
 cd /var/www/html
 
-GIT_CMD=$(ls -lsa /var/www/html |grep .git)
+GIT_CMD=$(ls -lsa /var/www/html | grep .git)
 if [ -z ["GIT_CMD"] ];
  then
      git init
@@ -59,5 +59,5 @@ if [ "ENV_DEST" != "ENV_SRC" ];
 
 fi
 
-echo " penser a taper la commande certbit --apache"
+echo " penser a taper la commande certbot --apache"
 
