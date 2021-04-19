@@ -39,6 +39,7 @@ cd /var/www/html
 GIT_CMD=$(ls -lsa /var/www/html | grep .git)
 if [ -z ["GIT_CMD"] ];
  then
+      echo " ok"
      git init
      git remote add origin https://github.com/benoit17630/monBlog.git
 fi
