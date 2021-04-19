@@ -37,13 +37,13 @@ echo "pull sources git"
 cd /var/www/html/
 
 GIT_CMD=$(ls -lsa /var/www/html/ | grep .git)
-if [ -z ["$GIT_CMD"] ];
+if [ -z "$GIT_CMD" ];
  then
       echo " ok"
      git init
      git remote add origin https://github.com/benoit17630/monBlog.git
 fi
-
+echo "PULL"
 #je pull  mon dossier 
 git pull origin main
  composer install 
