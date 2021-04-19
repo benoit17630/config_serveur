@@ -40,7 +40,7 @@ GIT_CMD=$(ls -lsa /var/www/html | grep .git)
 if [ -z ["GIT_CMD"] ];
  then
      git init
-     git remote add origin https://github.com/benoit17630/monBlog.git
+     git remote add origin main https://github.com/benoit17630/monBlog.git
 fi
 
 #je pull  mon dossier 
